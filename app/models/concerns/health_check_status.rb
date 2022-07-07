@@ -2,7 +2,8 @@ class HealthCheckStatus
   PROVIDERS = [
     CoreApiProvider,
     WebAppProvider,
-    DonationApiProvider
+    DonationApiProvider,
+    ProtocolProvider
   ].freeze
 
   GENERAL_HEALTH_STATUSES = {
