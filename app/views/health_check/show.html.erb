@@ -1,17 +1,13 @@
-<style>
-.app-card {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  padding: 2rem;
-  position: relative;
-}
-
-.status-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-</style>
-
+<nav class="navbar navbar-light bg-white">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://ribon.io/wp-content/uploads/2021/03/cropped-Ribon-logo-verde.png" width="100" class="d-inline-block align-top" alt="">
+      <span class="brand-text">
+        Status
+      </span>
+    </a>
+  </div>
+</nav>
 <div class="container mt-4">
   <%
     statuses = HealthCheckStatus::GENERAL_HEALTH_STATUSES
@@ -26,13 +22,10 @@
     end
   %>
 
-  
-
   <div class="row justify-content-center">
     <div class="col-lg-8">
-        <h1>Ribon Status</h1>
         <div class="alert <%= classname %>">
-          <%= @report[:general_status] %>
+          <strong><%= @report[:general_status] %></strong>
         </div>
 
       <h2>Current Status:</h2>
@@ -61,10 +54,141 @@
             <br>
             <small class="text-secondary">Ping: <%= status[:time] %>ms</small>
             <div class="status-badge">
-              <p class="<%= text_classname %>"><%= status[:status] %></p>
+              <p class="<%= text_classname %>"><strong><%= status[:status] %></strong></p>
             </div>
           </div>
         <% end %>
+      </div>
+      <div class="row">
+        <div class="timeline">
+          <div class="title">
+            <h1>Star wars movies</h1>
+            <h2>By release year</h2>
+          </div>
+          <div class="events">
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>2019</h2>
+              </div>
+              <div class="description">
+                <p><strong>The Rise of the Skywalker </strong><span>Episode IX</span></p>
+                <p>J. J. Abrams</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>2018</h2>
+              </div>
+              <div class="description">
+                <p><strong>Solo </strong><span>Anthology</span></p>
+                <p>Ron Howard</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>2017</h2>
+              </div>
+              <div class="description">
+                <p><strong>The Last Jedi </strong><span>Episode VIII</span></p>
+                <p>Rian Johnson</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>2016</h2>
+              </div>
+              <div class="description">
+                <p><strong>Rogue One </strong><span>Anthology</span></p>
+                <p>Gareth Edwards</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>2015</h2>
+              </div>
+              <div class="description">
+                <p><strong>The Force Awakens </strong><span>Episode VII</span></p>
+                <p>J. J. Abrams</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>2005</h2>
+              </div>
+              <div class="description">
+                <p><strong>Revenge of the Sith </strong><span>Episode III</span></p>
+                <p>George Lucas</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>2002</h2>
+              </div>
+              <div class="description">
+                <p><strong>Attack of the Clones </strong><span>Episode II</span></p>
+                <p>George Lucas</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>1999</h2>
+              </div>
+              <div class="description">
+                <p><strong>The Phantom Menace </strong><span>Episode I</span></p>
+                <p>George Lucas</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>1983</h2>
+              </div>
+              <div class="description">
+                <p><strong>Return of the Jedi </strong><span>Episode VI</span></p>
+                <p>Richard Marquand</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>1980</h2>
+              </div>
+              <div class="description">
+                <p><strong>The Empire Strikes Back </strong><span>Episode V</span></p>
+                <p>Irvin Kershner</p>
+              </div>
+            </div>
+            
+            <div class="event">
+              <div class="knob"></div>
+              <div class="date">
+                <h2>1977</h2>
+              </div>
+              <div class="description">
+                <p><strong>A New Hope </strong><span>Episode IV</span></p>
+                <p>George Lucas</p>
+              </div>
+            </div>
+            <div class="line"></div>
+          </div>
       </div>
     </div>
   </div>
