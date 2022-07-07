@@ -1,0 +1,71 @@
+<style>
+.app-card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 2rem;
+  position: relative;
+}
+
+.status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+</style>
+
+<div class="container mt-4">
+  <%
+    statuses = HealthCheckStatus::GENERAL_HEALTH_STATUSES
+  
+    classname = case @report[:general_status]
+    when statuses[:operational]
+       'alert-success'
+    when statuses[:unstable]
+       'alert-warning'
+    else
+       'alert-danger'
+    end
+  %>
+
+  
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h1>Ribon Status</h1>
+        <div class="alert <%= classname %>">
+          <%= @report[:general_status] %>
+        </div>
+
+      <h2>Current Status:</h2>
+      <div class="row g-0 justify-content-center">
+        <% @report[:statuses].each do |status| %>
+
+          <%
+            statuses = BaseProvider::APPLICATION_STATUSES
+          
+            text_classname = case status[:status]
+            when statuses[:normal]
+              'text-success'
+            when statuses[:unstable]
+              'text-warning'
+            else
+              'text-danger'
+            end
+          %>
+
+
+          <div class="col-lg-6 app-card">
+            <h5><strong><%= status[:app] %></strong></h5>
+            <span class="text-secondary">
+              <a href="<%= status[:url] %>"><%= status[:url] %></a>
+            </span>
+            <br>
+            <small class="text-secondary">Ping: <%= status[:time] %>ms</small>
+            <div class="status-badge">
+              <p class="<%= text_classname %>"><%= status[:status] %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
