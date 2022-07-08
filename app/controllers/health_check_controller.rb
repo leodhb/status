@@ -1,6 +1,6 @@
 class HealthCheckController < ApplicationController
   helper HealthCheckHelper
-  before_action :fetch_health_status
+  before_action :retrieve_report
 
   def show;end
 
@@ -12,7 +12,9 @@ class HealthCheckController < ApplicationController
 
   private
 
-  def fetch_health_status
-    @report = HealthCheckStatus.get
+  def retrieve_report
+    @report = Rails.cache.fetch("report", expires_in: 15.minutes) do
+      HealthCheckStatus.get
+    end
   end
 end
