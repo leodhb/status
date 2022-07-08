@@ -15,16 +15,15 @@
 </nav>
 <div class="container-fluid p-0 splash-img">
 </div>
-
 <div class="container mt-4">
   <%
     classname = case @report[:general_status]
     when general_statuses[:operational]
-       'alert-success'
+      'alert-success'
     when general_statuses[:unstable]
-       'alert-warning'
+      'alert-warning'
     else
-       'alert-danger'
+      'alert-danger'
     end
   %>
 
