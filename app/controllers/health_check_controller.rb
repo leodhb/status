@@ -1,4 +1,5 @@
 class HealthCheckController < ApplicationController
+  helper HealthCheckHelper
   before_action :fetch_health_status
 
   def show;end
@@ -8,7 +9,7 @@ class HealthCheckController < ApplicationController
       format.json { render json: @report }
     end
   end
-  
+
   private
 
   def fetch_health_status

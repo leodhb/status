@@ -18,12 +18,10 @@
 
 <div class="container mt-4">
   <%
-    statuses = HealthCheckStatus::GENERAL_HEALTH_STATUSES
-  
     classname = case @report[:general_status]
-    when statuses[:operational]
+    when general_statuses[:operational]
        'alert-success'
-    when statuses[:unstable]
+    when general_statuses[:unstable]
        'alert-warning'
     else
        'alert-danger'
@@ -41,18 +39,15 @@
         <% @report[:statuses].each do |status| %>
 
           <%
-            statuses = BaseProvider::APPLICATION_STATUSES
-          
             text_classname = case status[:status]
-            when statuses[:normal]
+            when single_app_statuses[:normal]
               'text-success'
-            when statuses[:unstable]
+            when single_app_statuses[:unstable]
               'text-warning'
             else
               'text-danger'
             end
           %>
-
 
           <div class="col-lg-6 app-card">
             <h5><strong><%= status[:app] %></strong></h5>
