@@ -1,4 +1,4 @@
-class DonationApiProvider < BaseProvider
+class DonationApiProvider < ProviderTypes::PingProvider
   URL = 'https://dapp.ribon.io'.freeze
   APP = 'DonationAPI'
 

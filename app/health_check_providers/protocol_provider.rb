@@ -1,4 +1,4 @@
-class ProtocolProvider < BaseProvider
+class ProtocolProvider < ProviderTypes::PingProvider
   URL = 'https://uai.ribon.io/'.freeze
   APP = 'Protocol'
 

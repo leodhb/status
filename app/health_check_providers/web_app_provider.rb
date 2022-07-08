@@ -1,4 +1,4 @@
-class WebAppProvider < BaseProvider
+class WebAppProvider < ProviderTypes::PingProvider
   URL = 'https://dapp.ribon.io'.freeze
   APP = 'WebApp'
 
