@@ -1,4 +1,4 @@
-class CoreApiProvider < ProviderTypes::PingProvider
+class CoreApiProvider < ProviderTypes::Ping
   URL = 'https://dapp.ribon.io'.freeze
   APP = 'CoreAPI'
 

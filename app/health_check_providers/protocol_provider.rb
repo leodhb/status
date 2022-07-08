@@ -1,4 +1,4 @@
-class ProtocolProvider < ProviderTypes::PingProvider
+class ProtocolProvider < ProviderTypes::Ping
   URL = 'https://protocol-unknown-url.ribon.io/'.freeze
   APP = 'Protocol'
 
