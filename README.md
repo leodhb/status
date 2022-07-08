@@ -1,24 +1,6 @@
-# README
+# Ribon Monitoring
+Proof of concept for monitoring of the Ribon DApp Environment
+<hr/>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Proposed Architecture
+![Diagram drawio](https://user-images.githubusercontent.com/24739860/177923567-390a8f47-d8ae-460f-9f7f-e366e450c2e1.png)
