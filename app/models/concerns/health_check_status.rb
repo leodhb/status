@@ -3,7 +3,9 @@ class HealthCheckStatus
     CoreApiProvider,
     WebAppProvider,
     DonationApiProvider,
-    ProtocolProvider
+    ProtocolProvider,
+    MainWebsiteProvider,
+    AwsGlobalProvider
   ].freeze
 
   GENERAL_HEALTH_STATUSES = {
