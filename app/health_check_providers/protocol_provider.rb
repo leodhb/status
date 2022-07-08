@@ -1,5 +1,5 @@
 class ProtocolProvider < ProviderTypes::PingProvider
-  URL = 'https://uai.ribon.io/'.freeze
+  URL = 'https://protocol-unknown-url.ribon.io/'.freeze
   APP = 'Protocol'
 
   def self.ping
